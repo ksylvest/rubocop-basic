@@ -1,13 +1,42 @@
 version: 2.1
-jobs:
-  build:
+
+orbs:
+  ruby: circleci/ruby@2.3.1
+
+executors:
+  default:
     docker:
-      - image: ruby:3.4.1
+      - image: cimg/ruby:3.4.1
+
+jobs:
+  rspec:
+    executor: default
     steps:
       - checkout
-      - run:
-          name: Run the default task
-          command: |
-            gem install bundler -v 2.6.2
-            bundle install
-            bundle exec rake
+      - ruby/install-deps
+      - ruby/rspec-test
+  rubocop:
+    executor: default
+    steps:
+      - checkout
+      - ruby/install-deps
+      - ruby/rubocop-check
+  release:
+    executor: default
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run: bundle exec rake release
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - rspec
+      - rubocop
+      - release:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
