@@ -1,32 +1,46 @@
 AllCops:
   NewCops: enable
 
-Layout/ArgumentAlignment:
-  EnforcedStyle: with_fixed_indentation
-
-Layout/FirstArrayElementIndentation:
-  EnforcedStyle: consistent
-
-Layout/FirstHashElementIndentation:
-  EnforcedStyle: consistent
-
-Layout/LineEndStringConcatenationIndentation:
-  EnforcedStyle: indented
-
-Layout/MultilineOperationIndentation:
-  EnforcedStyle: indented
-
-Layout/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutaccessmodifierindentation
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
 
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutarrayalignment
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutarrayalignment
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutfirsthashelementindentation
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutindentationconsistency
+Layout/LineEndStringConcatenationIndentation:
+  EnforcedStyle: indented
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutmultilinearrayalignment
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutmultilineblocklayout
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# https://docs.rubocop.org/rubocop/cops_layout.html#layoutparameteralignment
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
+# https://docs.rubocop.org/rubocop/cops_style.html#stylestringliterals
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# https://docs.rubocop.org/rubocop/cops_style.html#styletrailingcommainarrayliteral
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: consistent_comma
 
+# https://docs.rubocop.org/rubocop/cops_style.html#styletrailingcommainhashliteral
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
