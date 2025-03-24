@@ -33,6 +33,10 @@ Layout/MultilineMethodCallIndentation:
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
+# https://docs.rubocop.org/rubocop/cops_style.html#stylehashsyntax
+Style/HashSyntax:
+  EnforcedShorthandSyntax: always
+
 # https://docs.rubocop.org/rubocop/cops_style.html#stylestringliterals
 Style/StringLiterals:
   EnforcedStyle: double_quotes
